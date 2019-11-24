@@ -1,0 +1,16 @@
+name: Masak
+on: push
+
+jobs:
+  build:
+    name: Building
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Build
+      run: |
+        sudo apt-get update
+        git clone https://github.com/timangpopi/rom build
+        sudo bash ./build/prepare.sh
