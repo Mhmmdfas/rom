@@ -9,8 +9,6 @@ git config --global user.name "$GITHUB_USER"
 
 export outdir="out/target/product/$device"
 
-cd "$ROM"
-
 echo "Sync started for "$manifest_url""
 ../telegram -M "Sync Started for ["$ROM"]("$manifest_url")"
 SYNC_START=$(date +"%s")
@@ -44,8 +42,7 @@ Build Date : ""$(env TZ=$timezone date)""
     if [ -e device/"$oem"/"$device" ]; then
         python3 ../dependency_cloner.py
     fi
-    .build/envsetup.sh
-    lunch lineage_rolex-userdebug && mka bacon
+    brunch lineage_rolex-userdebug
     BUILD_END=$(date +"%s")
     BUILD_DIFF=$((BUILD_END - BUILD_START))
 
