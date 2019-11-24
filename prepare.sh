@@ -33,4 +33,9 @@ mkdir "$ROM"
 cd "$ROM"
 repo init -u "$manifest_url" -b "$branch" #--depth 1 >/dev/null  2>&1
 
-sudo bash ./build.sh
+sudo echo "ci ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
+useradd -m -d /home/ci ci
+useradd -g ci wheel
+sudo cp github-release /usr/bin
+sudo cp telegram /usr/bin
+sudo -Hu ci bash -c "bash build.sh"
