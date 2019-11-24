@@ -12,5 +12,5 @@ jobs:
     - name: Build
       run: |
         sudo apt-get update
-        git clone https://github.com/timangpopi/rom build
+        git clone https://github.com/timangpopi/rom -b master build
         sudo bash ./build/prepare.sh

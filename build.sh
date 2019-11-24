@@ -16,7 +16,7 @@ echo "Sync started for "$manifest_url""
 SYNC_START=$(date +"%s")
 #trim_darwin >/dev/null   2>&1
 #repo sync --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all) -q 2>&1 >>logwe 2>&1
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags #2>&1 >>logwe 2>&1
+repo sync -c -j48 --force-sync --no-clone-bundle --no-tags #2>&1 >>logwe 2>&1
 if [ -e device/$oem/$device ]; then
 
 else
@@ -46,8 +46,8 @@ Build Date : ""$(env TZ=$timezone date)""
     if [ -e device/"$oem"/"$device" ]; then
         python3 ../dependency_cloner.py
     fi
-    lunch "$rom_vendor_name"_"$device"-userdebug >/dev/null  2>&1
-    make bacon -j4
+    .build/envsetup.sh
+    make bacon -j16
     BUILD_END=$(date +"%s")
     BUILD_DIFF=$((BUILD_END - BUILD_START))
 
