@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source ./config.sh
+source ../config.sh
+
 echo "***Build Bot***"
-./telegram -M "Owshit here we go again"
 # Email for git
 git config --global user.email "$GITHUB_EMAIL"
 git config --global user.name "$GITHUB_USER"
