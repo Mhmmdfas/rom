@@ -16,12 +16,10 @@ echo "Sync started for "$manifest_url""
 SYNC_START=$(date +"%s")
 #trim_darwin >/dev/null   2>&1
 #repo sync --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all) -q 2>&1 >>logwe 2>&1
-repo sync -c -j48 --force-sync --no-clone-bundle --no-tags #2>&1 >>logwe 2>&1
-if [ -e device/$oem/$device ]; then
+repo sync frameworks/base #2>&1 >>logwe 2>&1
 
-else
-	bash ../clone.sh
-fi
+bash ../clone.sh
+
 SYNC_END=$(date +"%s")
 SYNC_DIFF=$((SYNC_END - SYNC_START))
 if [ -e frameworks/base ]; then
@@ -47,7 +45,7 @@ Build Date : ""$(env TZ=$timezone date)""
         python3 ../dependency_cloner.py
     fi
     .build/envsetup.sh
-    make bacon -j16
+    lunch lineage_rolex-userdebug && mka bacon
     BUILD_END=$(date +"%s")
     BUILD_DIFF=$((BUILD_END - BUILD_START))
 
