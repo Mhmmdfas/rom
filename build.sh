@@ -14,7 +14,7 @@ echo "Sync started for "$manifest_url""
 SYNC_START=$(date +"%s")
 #trim_darwin >/dev/null   2>&1
 #repo sync --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all) -q 2>&1 >>logwe 2>&1
-repo sync frameworks/base #2>&1 >>logwe 2>&1
+repo sync -c -j48 --force-sync --no-clone-bundle --no-tags #2>&1 >>logwe 2>&1
 
 bash ../clone.sh
 
@@ -39,7 +39,7 @@ Build Date : ""$(env TZ=$timezone date)""
 
     source build/envsetup.sh >/dev/null  2>&1
     source ../config.sh
-    make lineage_rolex-userdebug
+    make bacon -j8
     BUILD_END=$(date +"%s")
     BUILD_DIFF=$((BUILD_END - BUILD_START))
 
