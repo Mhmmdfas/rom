@@ -9,7 +9,7 @@ KBUILD_BUILD_HOST="timangpopi"
 export oem=xiaomi
 export device=rolex
 
-ROM="lineage-16.0"
+ROM="lineage-pie"
 manifest_url="https://github.com/LineageOS/android.git"
 export rom_vendor_name="aosp" # This represent the nams used by different rom vendors, Ex - aosp_harpia-userdebug, aosp is vendor name.
 branch="lineage-16.0"
