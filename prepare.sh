@@ -32,3 +32,5 @@ function trim_darwin() {
 mkdir "$ROM"
 cd "$ROM"
 repo init -u "$manifest_url" -b "$branch" #--depth 1 >/dev/null  2>&1
+
+sudo -Hu ci bash -c "bash build.sh"
