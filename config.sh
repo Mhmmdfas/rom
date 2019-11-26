@@ -12,7 +12,7 @@ export device=rolex
 ROM="Lineage-OS"
 manifest_url="https://github.com/LineageOS/android.git"
 export rom_vendor_name="lineage" # This represent the nams used by different rom vendors, Ex - aosp_harpia-userdebug, aosp is vendor name.
-branch="lineage-16.0"
+branch="lineage-15.0"
 
 release_repo="timangpopi/build"
 
