@@ -37,7 +37,7 @@ Build Date : ""$(env TZ=$timezone date)""
 
     BUILD_START=$(date +"%s")
 
-    source build/envsetup.sh >/dev/null  2>&1
+    source build/envsetup.sh 2>&1
     source ../config.sh
     make bacon -j8
     BUILD_END=$(date +"%s")
