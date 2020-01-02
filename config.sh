@@ -14,7 +14,7 @@ manifest_url="https://github.com/LineageOS/android.git"
 export rom_vendor_name="lineage"
 branch="lineage-15.0"
 
-release_repo="timangpopi/build"
+release_repo="mhmmdfas/build"
 
 timezone="Asia/Jakarta"
 
