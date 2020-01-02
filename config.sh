@@ -11,13 +11,13 @@ export device=rolex
 
 ROM="Lineage-OS"
 manifest_url="https://github.com/LineageOS/android.git"
-export rom_vendor_name="lineage" # This represent the nams used by different rom vendors, Ex - aosp_harpia-userdebug, aosp is vendor name.
+export rom_vendor_name="lineage"
 branch="lineage-15.0"
 
 release_repo="timangpopi/build"
 
 timezone="Asia/Jakarta"
 
-export TELEGRAM_TOKEN="923829062:AAHAkKpoL-iAdDm6nmp4GPjKhjfxWkTMLPY"
-export TELEGRAM_CHAT="-1001158707255"
-export GITHUB_TOKEN="923829062:AAHAkKpoL-iAdDm6nmp4GPjKhjfxWkTMLPY"
+export TELEGRAM_TOKEN=$TOKEN
+export TELEGRAM_CHAT=$CHAT_ID
+export GITHUB_TOKEN=$GITHUB_TOKEN
